@@ -1,6 +1,6 @@
 #include"decompose.h"
 
-double int_part(double x){
+int int_part(double x){
 	return (int)x;
 }
 

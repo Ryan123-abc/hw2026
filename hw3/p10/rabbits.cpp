@@ -15,7 +15,7 @@ int main(){
 		return 0;
 	}
 	if(n==1){
-		cout <<is 1 pairs of rabbits."<<endl;
+		cout <<"There is 1 pairs of rabbits."<<endl;
 		return 0;
 	}
 	for(int i=1; i<n; i++){
@@ -25,7 +25,7 @@ int main(){
 	}
 	all=new_r+grow+big;
 
-	cout << "Ther are "<< all <<" pairs of rabbits."<<endl;
+	cout << "There are "<< all <<" pairs of rabbits."<<endl;
 	return 0;
 }
 
