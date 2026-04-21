@@ -17,5 +17,5 @@ void data_processing(char *ptr){
 
 	double total = midtest*0.35 + finaltest*0.35 + daily*0.3;
 
-	cout << name << "(" << id << "):" << fixed << setprecision(1) << total << endl;
+	cout << name << "(" << id << "): " << fixed << setprecision(1) << total << endl;
 }
