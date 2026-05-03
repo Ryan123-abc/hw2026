@@ -15,7 +15,7 @@ void Tourist::send_email(){
 	cout << "\tTo: " << flight.destination << endl;
 
 	cout << "\tDate: " << flight.date.month << "/" << flight.date.day << "/" << flight.date.year << endl;
-	cout << "\tBorading Time: " << flight.boarding_time.hour << ":" << flight.boarding_time.minute << endl;
+	cout << "\tBoarding Time: " << flight.boarding_time.hour << ":" << flight.boarding_time.minute << endl;
 	cout << "\tGate: " << flight.gate << endl;
 	cout << "Safe travels,\nThe Pineapple Airlines Team" << endl;
 }
