@@ -27,7 +27,77 @@ void Credit::show_table()
     cout << "==================================" << endl;
 }
 
-void Credit::classify_and_add_credits(Course c)
-{
-	// 請完成此函式
+void Credit::classify_and_add_credits(Course c){
+	// 1. 檢查分數是否及格
+    if (c.score < 60) {
+        return;
+    }
+
+    // 2. 依序檢查課程代號屬於哪個陣列
+    // 系必修
+    for (int i = 0; i < CSIE_REQUIRED_MAX; ++i) {
+        if (c.subject_code == csie_required[i]) {
+            this->csie.required += c.credit;
+            return;
+        }
+    }
+
+    // 系選修
+    for (int i = 0; i < CSIE_ELECTIVE_MAX; ++i) {
+        if (c.subject_code == csie_elective[i]) {
+            this->csie.elective += c.credit;
+            return;
+        }
+    }
+
+    // 通識-共同教育
+    for (int i = 0; i < GE_COMMON_MAX; ++i) {
+        if (c.subject_code == ge_common[i]) {
+            this->ge.common += c.credit;
+            return;
+        }
+    }
+
+    // 通識-體適能
+    for (int i = 0; i < GE_PHYSICAL_FITNESS_MAX; ++i) {
+        if (c.subject_code == ge_physical_fitness[i]) {
+            this->ge.physical_fitness += c.credit;
+            return;
+        }
+    }
+
+    // 博雅教育-公民與社會
+    for (int i = 0; i < LIBERAL_CIVICS_SOCIETY_MAX; ++i) {
+        if (c.subject_code == liberal_civics_society[i]) {
+            this->ge.liberal.civics_society += c.credit;
+            return;
+        }
+    }
+
+    // 博雅教育-美學與文化
+    for (int i = 0; i < LIBERAL_AESTHETICS_CULTURE_MAX; ++i) {
+        if (c.subject_code == liberal_aesthetics_culture[i]) {
+            this->ge.liberal.aesthetics_culture += c.credit;
+            return;
+        }
+    }
+
+    // 博雅教育-自然與科技
+    for (int i = 0; i < LIBERAL_SCIENCE_TECHNOLOGY_MAX; ++i) {
+        if (c.subject_code == liberal_science_technology[i]) {
+            this->ge.liberal.science_technology += c.credit;
+            return;
+        }
+    }
+
+    // 國防教育
+    for (int i = 0; i < NATIONAL_DEFENCE_MAX; ++i) {
+        if (c.subject_code == national_defence[i]) {
+            this->national_defence_edu += c.credit;
+            return;
+        }
+    }
+
+    // 3. 若以上皆無匹配，則計入自由選修
+    this->free_elective += c.credit;
 }
