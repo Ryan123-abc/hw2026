@@ -25,7 +25,7 @@ void SavingAccount::withdraw(int amount){
         write_record(msg);
     }
     else{
-        string msg = "[   FAIL   ] " + get_name() + " failed to withdraw $" + to_string(amount);
+        string msg = "[   FAIL  ] " + get_name() + " failed to withdraw $" + to_string(amount);
         cout << msg << endl;
         write_record(msg);
     }
@@ -40,7 +40,7 @@ void SavingAccount::transfer(int amount, BankAccount &recipient){
         write_record(msg);
     }
     else{
-        string msg = "[   FAIL   ] " + get_name() + " failed to transfer $" + to_string(amount) + " to " + recipient.get_name();
+        string msg = "[   FAIL  ] " + get_name() + " failed to transfer $" + to_string(amount) + " to " + recipient.get_name();
         cout << msg << endl;
         write_record(msg);
     }
